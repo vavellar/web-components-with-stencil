@@ -1,0 +1,27 @@
+.tooltip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tooltip__icon {
+  margin-left: 10px;
+  background-color: black;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.tooltip__wrapper {
+  position: relative;
+  display: flex;
+}
+
+.tooltip__text {
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 25px;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
