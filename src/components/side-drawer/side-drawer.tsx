@@ -1,13 +1,13 @@
 import { Component, h, Method, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'cs-side-drawer',
+  tag: 'victor-side-drawer',
   styleUrl: './side-drawer.css',
   shadow: true
 })
 export class SideDrawer {
   @State() showContactInfo = false
-  @Prop({reflect: true}) title: string = 'Drawer title'
+  @Prop({reflect: true}) drawerTitle: string = 'Drawer title'
   @Prop({reflect: true, mutable: true}) opened: boolean
 
   onCloseDrawer() {
@@ -59,7 +59,7 @@ export class SideDrawer {
         <aside>
           <header>
             <h1>
-              {this.title}
+              {this.drawerTitle}
             </h1>
             <button onClick={this.onCloseDrawer.bind(this)}>X</button>
           </header>

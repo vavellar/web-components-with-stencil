@@ -1,7 +1,7 @@
 import { Component, h, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'cs-tooltip',
+  tag: 'victor-tooltip',
   styleUrl: './tooltip.css',
   shadow: true
 })
@@ -15,7 +15,6 @@ export class Tooltip {
     this.isOpen = !this.isOpen
   }
   render() {
-    console.log(this.tooltipText)
     return (
       <div class="tooltip">
         <slot/>

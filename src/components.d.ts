@@ -6,52 +6,98 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface CsSideDrawer {
+    interface VictorSideDrawer {
+        "drawerTitle": string;
         "open": () => Promise<void>;
         "opened": boolean;
-        "title": string;
     }
-    interface CsTooltip {
+    interface VictorSpinner {
+    }
+    interface VictorStockFinder {
+    }
+    interface VictorStockPrice {
+        "stockSymbol": string;
+    }
+    interface VictorTooltip {
         "tooltipText": string;
     }
 }
+export interface VictorStockFinderCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLVictorStockFinderElement;
+}
 declare global {
-    interface HTMLCsSideDrawerElement extends Components.CsSideDrawer, HTMLStencilElement {
+    interface HTMLVictorSideDrawerElement extends Components.VictorSideDrawer, HTMLStencilElement {
     }
-    var HTMLCsSideDrawerElement: {
-        prototype: HTMLCsSideDrawerElement;
-        new (): HTMLCsSideDrawerElement;
+    var HTMLVictorSideDrawerElement: {
+        prototype: HTMLVictorSideDrawerElement;
+        new (): HTMLVictorSideDrawerElement;
     };
-    interface HTMLCsTooltipElement extends Components.CsTooltip, HTMLStencilElement {
+    interface HTMLVictorSpinnerElement extends Components.VictorSpinner, HTMLStencilElement {
     }
-    var HTMLCsTooltipElement: {
-        prototype: HTMLCsTooltipElement;
-        new (): HTMLCsTooltipElement;
+    var HTMLVictorSpinnerElement: {
+        prototype: HTMLVictorSpinnerElement;
+        new (): HTMLVictorSpinnerElement;
+    };
+    interface HTMLVictorStockFinderElement extends Components.VictorStockFinder, HTMLStencilElement {
+    }
+    var HTMLVictorStockFinderElement: {
+        prototype: HTMLVictorStockFinderElement;
+        new (): HTMLVictorStockFinderElement;
+    };
+    interface HTMLVictorStockPriceElement extends Components.VictorStockPrice, HTMLStencilElement {
+    }
+    var HTMLVictorStockPriceElement: {
+        prototype: HTMLVictorStockPriceElement;
+        new (): HTMLVictorStockPriceElement;
+    };
+    interface HTMLVictorTooltipElement extends Components.VictorTooltip, HTMLStencilElement {
+    }
+    var HTMLVictorTooltipElement: {
+        prototype: HTMLVictorTooltipElement;
+        new (): HTMLVictorTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "cs-side-drawer": HTMLCsSideDrawerElement;
-        "cs-tooltip": HTMLCsTooltipElement;
+        "victor-side-drawer": HTMLVictorSideDrawerElement;
+        "victor-spinner": HTMLVictorSpinnerElement;
+        "victor-stock-finder": HTMLVictorStockFinderElement;
+        "victor-stock-price": HTMLVictorStockPriceElement;
+        "victor-tooltip": HTMLVictorTooltipElement;
     }
 }
 declare namespace LocalJSX {
-    interface CsSideDrawer {
+    interface VictorSideDrawer {
+        "drawerTitle"?: string;
         "opened"?: boolean;
-        "title"?: string;
     }
-    interface CsTooltip {
+    interface VictorSpinner {
+    }
+    interface VictorStockFinder {
+        "onCsSymbolSelected"?: (event: VictorStockFinderCustomEvent<string>) => void;
+    }
+    interface VictorStockPrice {
+        "stockSymbol"?: string;
+    }
+    interface VictorTooltip {
         "tooltipText"?: string;
     }
     interface IntrinsicElements {
-        "cs-side-drawer": CsSideDrawer;
-        "cs-tooltip": CsTooltip;
+        "victor-side-drawer": VictorSideDrawer;
+        "victor-spinner": VictorSpinner;
+        "victor-stock-finder": VictorStockFinder;
+        "victor-stock-price": VictorStockPrice;
+        "victor-tooltip": VictorTooltip;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "cs-side-drawer": LocalJSX.CsSideDrawer & JSXBase.HTMLAttributes<HTMLCsSideDrawerElement>;
-            "cs-tooltip": LocalJSX.CsTooltip & JSXBase.HTMLAttributes<HTMLCsTooltipElement>;
+            "victor-side-drawer": LocalJSX.VictorSideDrawer & JSXBase.HTMLAttributes<HTMLVictorSideDrawerElement>;
+            "victor-spinner": LocalJSX.VictorSpinner & JSXBase.HTMLAttributes<HTMLVictorSpinnerElement>;
+            "victor-stock-finder": LocalJSX.VictorStockFinder & JSXBase.HTMLAttributes<HTMLVictorStockFinderElement>;
+            "victor-stock-price": LocalJSX.VictorStockPrice & JSXBase.HTMLAttributes<HTMLVictorStockPriceElement>;
+            "victor-tooltip": LocalJSX.VictorTooltip & JSXBase.HTMLAttributes<HTMLVictorTooltipElement>;
         }
     }
 }

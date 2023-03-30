@@ -1,7 +1,8 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'webcomponents-with-stencil',
+  namespace: 'victor-wc-with-stencil',
+  globalStyle: 'src/global/global.css',
   outputTargets: [
     {
       type: 'dist',
@@ -13,9 +14,9 @@ export const config: Config = {
     {
       type: 'docs-readme',
     },
-    {
-      type: 'www',
-      serviceWorker: null, // disable service workers
-    },
+    // {
+    //   type: 'www',
+    //   serviceWorker: null, // disable service workers
+    // },
   ],
 };

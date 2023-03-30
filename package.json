@@ -1,6 +1,6 @@
 {
-  "name": "webcomponents-with-stencil",
-  "version": "0.0.1",
+  "name": "victor-wc-with-stencil",
+  "version": "0.0.3",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
